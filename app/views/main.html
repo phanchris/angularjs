@@ -1,0 +1,67 @@
+
+<nav class="navbar navbar-default navbar-fixed-top">
+
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a  href="#main/home"><img style="margin:0px;"with ="70px" height="50px" src="libs/img/icon-train.png" alt="Home" /></a>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar">
+            <ul class="nav navbar-nav">
+                <li class="li-list-menu-main" ng-class="activeHome" ><a  href="#main/home">Home</a></li>
+                <li class="li-list-menu-main" ng-class="activeInfor" ><a  href="#main/information">Check Valid Ticket</a></li>
+                <li class="li-list-menu-main" ng-class="activeEvent" ><a  href="#main/event">Events</a></li>
+                <li class="li-list-menu-main" ng-class="activeTimetable" ><a  href="#main/viewtime">Timetable</a></li>
+                <li class="li-list-menu-main" ng-class="activeGuide" ><a  href="#main/guide">Guide</a></li>
+                <li class="li-list-menu-main" ng-class="activeContact"><a  href="#main/contact">Contact</a></li>
+                <li class="li-list-menu-main" ng-class="activeAdmin"  ng-show="showAdmin"><a href="#main/admin">Admin</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li ng-click="openLogin()"><a href="" ng-class="switchLog">{{titleLog}}</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- CONTAINs -->
+<div id="div-load-data" ng-class="$root.showLoad">
+  <img id="img-load-data" class="img-responsive"  src="libs/img/load.gif" alt="" />
+</div>
+<div ui-view class="page-wrap" ng-class="$root.backgroundPage"></div>
+<div class="modal fade" id="formLogin" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header" style="padding:5px 10px;">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
+            </div>
+            <div class="modal-body">
+                <form role="form">
+                    <div class="form-group form-login">
+                        <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
+                        <input ng-model="userName" type="text" class="form-control" id="usrname" placeholder="User name">
+                    </div>
+                    <div class="form-group form-login">
+                        <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+                        <input ng-model="userPass" type="password" class="form-control" id="psw" placeholder="Enter password">
+                    </div>
+                    <button id="log" ng-click="loginUser()" type="submit" class="btn btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- CONTAINs -->
+<div class="site-footer">
+    <div class="container">
+        <p class="text-muted text-center">Vietnam Railways, 118 Le Duan, Hoan Kiem, Hanoi. Phone number: 19006469. Email: dsvn@vr.com.vn. Certificate of Business Registration No. 113642 according to Decision No. 973/QĐ-TTg dated 25 June 2010 of the Prime Minister. Enterprise code: 0100105052,
+            fist registration on 26 July 2010, the fourth registration for change on 27 June 2014 at Hanoi Authority for Planning and Investment.</p>
+    </div>
+</div>

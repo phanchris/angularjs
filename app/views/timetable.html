@@ -1,0 +1,101 @@
+<div class="container div-container">
+  <!-- ====================================================================== cCONTEN======================= -->
+  <div class="row body_heigh">
+
+    <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 conte_left">
+      <p class="tag_p well-sm well-lg">Time journey</p>
+      <hr>
+      <p ng-click="north_sound()" class="tag_p_p"><span class="fa fa-train train"></span> Tau Khach Bac Nam </p>
+      <hr>
+      <p ng-click="hanoi_danang()" class="tag_p_p"><span class="fa fa-train train"></span> Ha Noi, Vinh, Hue, Da Nang</p>
+      <hr>
+      <p ng-click="hanoi_laocai()" class="tag_p_p"><span class="fa fa-train train"></span> Ha Noi-Lao Cai</p>
+      <hr>
+      <p ng-click="hanoi_haiphong()" class="tag_p_p"><span class="fa fa-train train"></span> Ha Noi-Hai Phong</p>
+      <hr>
+      <p ng-click="hanoi_dongdang()" class="tag_p_p"><span class="fa fa-train train"></span> Ha Noi-Dong Dang</p>
+      <hr>
+      <p ng-click="hanoi_thainguyen()" class="tag_p_p"><span class="fa fa-train train"></span> Ha Noi-Thai Nguyen</p>
+      <hr>
+      <p ng-click="saigon_danang()" class="tag_p_p"><span class="fa fa-train train"></span> Sai Gon, Nha Trang, Da Nang</p>
+      <hr>
+      <p ng-click="saigon_phanthiet()" class="tag_p_p"><span class="fa fa-train train"></span> Sai Gon-Phan Thiet</p>
+      <hr>
+      <p ng-click="saigon_quinhon()" class="tag_p_p"><span class="fa fa-train train"></span> Sai Gon-Quy Nhơn</p>
+      <hr>
+      <!-- ===============================================================ddddddddddddddd===========Pricessss-->
+
+      <p class="tag_p_1 well-sm well-lg">Price</p>
+      <hr>
+      <p ng-click="Price_north_sound()" class="tag_p_p"><span class="fa fa-usd train"></span> Tau Khach Bac Nam</p>
+      <hr>
+      <p ng-click="Price_hanoi_danang()" class="tag_p_p"><span class="fa fa-usd train"></span> Ha Noi, Vinh, Hue, Da Nang</p>
+      <hr>
+      <p ng-click="Price_hanoi_laocai()" class="tag_p_p"><span class="fa fa-usd train"></span> Ha Noi-Lao Cai</p>
+      <hr>
+      <p ng-click="Price_hanoi_haiphong()" class="tag_p_p"><span class="fa fa-usd train"></span> Ha Noi-Hai Phong</p>
+      <hr>
+      <p ng-click="Price_hanoi_dongdang()" class="tag_p_p"><span class="fa fa-usd train"></span> Ha Noi-Dong Dang</p>
+      <hr>
+      <p ng-click="Price_hanoi_thainguyen()" class="tag_p_p"><span class="fa fa-usd train"></span> Ha Noi-Thai Nguyen</p>
+      <hr>
+      <p ng-click="Price_saigon_danang()" class="tag_p_p"><span class="fa fa-usd train"></span> Sai Gon, Nha Trang, Da Nang</p>
+      <hr>
+      <p ng-click="Price_saigon_phanthiet()" class="tag_p_p"><span class="fa fa-usd train"></span> Sai Gon-Phan Thiet</p>
+      <hr>
+      <p ng-click="Price_saigo_quinhon()" class="tag_p_p"><span class="fa fa-usd train"></span> Sai Gon-Quy Nhơn</p>
+      <hr>
+    </div>
+    <div class="col-xs-12 col-sm-5 col-md-6 col-lg-6 conte_right">
+      <!-- -=================================================================================================Right-->
+
+      <p class="journey">JOURNEY INFORMATION and TIME</p>
+      <div id="contenID">
+        <p id="listid"><b>Name train:</b> <span> {{Name}}</span></p>
+      </div>
+      <hr>
+      <div id="journey_text">
+        <p> {{Trainjourneygo}} <span id="idtrain"> <select ng-model="selected_option" ng-change = "changListTrain()" ng-options="infor for infor in name">
+        <!-- <option value="">--Select--</option> -->
+      </select></span></p>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <th>{{station}}</th>
+            <th ng-hide="hide">{{timeaway}}</th>
+            <th>{{timearrivals}}</th>
+          </thead>
+          <tbody>
+            <tr ng-repeat="station in listJourney">
+              <!-- <div ng-repe -->
+              <td> {{station[0].station}} {{station.fromStation + connect + station.toStation}}</td>
+              <td ng-hide="hide">{{Math.floor(station[0].time/60) | number :0 }}:{{ Math.floor(station[0].time%60) | number :0}} </td>
+              <td ng-hide="hide">{{Math.floor(station[1].time/60) | number :0}}:{{ Math.floor(station[1].time%60) | number :0}}</td>
+              <td ng-hide="show">{{station.price}}<sup>đ</sup></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 tbl_price">
+      <div class="table-responsive " ng-hide="show">
+        <table class="table table-bordered table-striped ">
+          <thead>
+            <th>Type coach</th>
+            <th>Price</th>
+          </thead>
+          <tbody>
+            <tr ng-repeat="coach in coachsTrain">
+              <td>{{coach.typeCoach}}</td>
+              <td>{{coach.price}}<sup>đ</sup></td>
+            </tr>
+            <tr>
+              <td colspan="2" id="textheadTB">Fares are inclusive of insurance and value added tax</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

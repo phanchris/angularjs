@@ -1,0 +1,25 @@
+<div id="div-train" class="div-block-contain">
+  <h3 class="h3-title" style="margin-top:15px;">Edit User</h3>
+  <label class="col-xs-12 col-ms-12 col-md-2 col-lg-2 idAminTicket">ID ticket
+  </label>
+  <input type="text" class="col-xs-12 col-ms-12 col-md-4 col-lg-4 idAminTicket" ng-model="txtIdTicket" placeholder="Enter ticket code...">
+  <label class="col-xs-12 col-ms-12 col-md-2 col-lg-2 idAminTicket">ID
+  </label>
+  <input type="text" class="col-xs-12 col-ms-12 col-md-4 col-lg-4 idAminTicket" ng-model="txtId" placeholder="Enter customer code....">
+
+  <label class="col-xs-12 col-ms-12 col-md-2 col-lg-2">Name
+  </label>
+  <input type="text" class="col-xs-12 col-ms-12 col-md-4 col-lg-4" ng-model="txtCustomer" placeholder="Enter name customer....">
+
+  <div style="margin-top: 20px;" class="col-xs-12 col-ms-12 col-md-12 col-lg-12">
+    <button style="display: block; max-width: 200px; margin: 0 auto;" ng-click="updateCus()">Save</button>
+  </div>
+  <h3 class="h3-title" style="margin-top:15px;">Pay money</h3>
+  <label class="col-xs-12 col-ms-12 col-md-2 col-lg-2">Id ticket
+  </label>
+  <input type="text" class="col-xs-12 col-ms-12 col-md-4 col-lg-4" ng-model="txtStateTicket" placeholder="Enter ticket code to pay....">
+
+  <div style="margin-top: 20px;" class="col-xs-12 col-ms-12 col-md-12 col-lg-12">
+    <button style="display: block; max-width: 200px; margin: 0 auto;" ng-click="changeState()">Pay</button>
+  </div>
+</div>

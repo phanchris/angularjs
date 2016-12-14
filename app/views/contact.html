@@ -1,0 +1,53 @@
+<!-- Part 1: Wrap all page content here -->
+<div id="wrap">
+    <!-- Begin page content -->
+    <div class="container">
+        <div class="contact row">
+            <div class="col-xs-0 col-sm-0 col-md-1 col-lg-3"></div>
+            <form name ="form" class="form-horizontal  col-xs-12 col-sm-12 col-md-10
+                                    col-lg-6  contactForm" role="form" method="post">
+                <div class="form-group">
+                    <label class="text-center" style="width:100%; font-size:25px; margin-top:20px; ">CONTACT WITH US</label>
+                </div>
+                <div class="form-group">
+                    <label for="name" class="col-sm-2 control-label">Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" ng-model="customerContactName"
+                                class="form-control" id="name" name="customerContactName"
+                                  placeholder="First & Last Name"  minlength="3" maxlength="100" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="col-sm-2 control-label">Email</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" ng-model="customerContactMail"
+                                id="email" name="email" minlength="1" maxlength="100" placeholder="example@domain.com" value="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message" class="col-sm-2 control-label">Message</label>
+                    <div class="col-sm-10" style="padding-right:0px;">
+                        <textarea class="form-control" ng-model="contentContact"  minlength="1" maxlength="2000"  rows="4" name="message"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="human" class="col-sm-2 control-label">{{firstNumer}} + {{secondNumer}}</label>
+                    <div class="col-sm-10">
+                        <input type="number" ng-model="answer" ng-class="classAnswer"   class="form-control" id="human"
+                                   minlength="1" maxlength="4" name="human" placeholder="Your Answer">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-10 col-sm-offset-2">
+                        <button id="submit" name="submit" type="submit" ng-click="send()" class="btn btn-primary">Send</button>
+                    </div>
+                </div>
+                <div class="form-group col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                    <div class="col-sm-10 col-sm-offset-2"></div>
+                </div>
+            </form>
+            <div class="col-xs-0 col-sm-0 col-md-1 col-lg-3"></div>
+        </div>
+    </div>
+    <div id="push"></div>
+</div>

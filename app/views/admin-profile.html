@@ -1,0 +1,27 @@
+<!-- Your Profile -->
+<div id="div-profile" class="div-block-contain">
+  <h1 style="margin-top:0px;">Your profile</h1>
+  <div class=" table-responsive">
+
+
+  <table class="table table-bordered">
+    <tr>
+      <td>ID</td>
+      <td>{{admin._id}}</td>
+    </tr>
+    <tr>
+      <td>Full Name</td>
+      <td>{{admin.name}}</td>
+    </tr>
+    <tr>
+    <td>Level</td>
+      <td>{{admin.level}}</td>
+    </tr>
+  </table>
+  </div>
+  <label class="col-xs-12 col-ms-12 col-md-3 col-lg-3">Change Password:</label>
+  <input ng-model='oldPass' id="iput-old-pw" style='margin-left: 5px;'class="col-xs-12 col-ms-6 col-md-2 col-lg-2" type="password" placeholder="Old...">
+  <input ng-model='newPass' id="iput-new-pw" style='margin-left: 5px;'class="col-xs-12 col-ms-6 col-md-2 col-lg-2" type="password" placeholder="New...">
+  <input ng-model='confirm' id="iput-new-pw-again" style='margin-left: 5px;'class="col-xs-12 col-ms-6 col-md-2 col-lg-2" type="password" placeholder="Confirm...">
+  <button ng-click="changePassword()" style='margin-left: 5px; 'class="col-xs-12 col-ms-12 col-md-2 col-lg-2" type="button">Change</button>
+</div>

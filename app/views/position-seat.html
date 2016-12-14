@@ -1,0 +1,61 @@
+<div class="container div-container" onchange="changeClassContainer()" >
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3" style="margin-bottom: 20px;">
+      <ul class="nav nav-tabs">
+        <li class="li-menu-train active" ng-click="changeJourney()" >Departing</li>
+        <li class="li-menu-train" ng-click="changeJourneyReturn()">Return</li>
+      </ul>
+      <div class="div-list-train " ng-animate='animate'>
+      <div class="div-train col-xs-12 col-sm-12 col-md-2 col-lg-2" ng-animate='animate'
+        ng-repeat=" train in trainsActive track by $index" ng-click="changeListCoach(this)">
+        <span >ID: {{train._id}} </span><br>
+        <span >Name: {{train.title}} </span><br>
+        <span> Time: {{showTime($index) | date:'yyyy/MM/dd HH:mm:ss'}}</span><br>
+        <span> From:  {{getTimeDate(train._id, 'from')}}</span><br>
+        <span> To:  {{getTimeDate(train._id, 'to')}}</span>
+        <div class="select-train">
+          <label class="select-train-label"> Selected</label>
+        </div>
+      </div>
+
+    </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+      <ul class="nav nav-tabs">
+        <li class='li-menu-coach' ng-repeat="coach in trainActive.coachs "
+              ng-click = "changeListSeat(this)">Coach {{coach._id}} </li>
+      </ul>
+      <div class="div-list-seat">
+
+        <label ng-class="show">Sold out</label>
+        <div class="div-seat" ng-repeat="seat in listSeat track by seat.number ">
+          <div class="div-coach">
+            <span class="span-align">Coach {{coachActive._id}}</span>
+          </div>
+          <div class="div-seat-info" ng-click="chooseSeat(this)" >
+            <span>Seat number {{seat.number}}</span><br>
+            <span>{{coachActive.typeCoach}}</span><br>
+            <span>Price: {{coachActive.price | separatorThousand}}vnđ</span><br>
+          </div>
+        </div>
+    </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
+      <ul class="nav nav-tabs">
+        <li class="li-your-card" >Your Cards</li>
+      </ul>
+      <div class="div-list-car">
+        <div class="div-card" ng-repeat=" ticket in listTickets | orderBy: listTickets.seatNumber " ng-click="removeTicket(this)">
+            <span class="span-your-car">Train {{ticket._idTrain}}</span><br>
+            <span class="span-your-car">Coach {{ticket.coachTrain}}</span><br>
+            <span class="span-your-car">Seat number {{ticket.seatNumber}}</span><br>
+            <span class="span-your-car">{{ticket.typeSeat}}</span><br>
+            <span class="span-your-car">Price: {{ticket.price | separatorThousand}}nvđ</span>
+        </div>
+
+    </div>
+          <button  ng-click="changeState()" class="btn  btn-default btn-md btn-buy-card">
+            Buy</button>
+    </div>
+  </div>
+</div>
