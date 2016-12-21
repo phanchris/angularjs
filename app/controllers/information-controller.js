@@ -89,13 +89,13 @@ routerApp.controller('InformationController', function(ChangeInfor, ShowLog, URL
         $rootScope.showLoad = "hide-load";
         BootstrapDialog.show({
           title: 'Sucessed',
-          message: 'You have cacel completed ticket'
+          message: 'You have cancel completed ticket'
         });
       }).error(function(response) {
         $rootScope.showLoad = "hide-load";
         BootstrapDialog.show({
           title: 'Warrning',
-          message: 'No ticket was found'
+          message: 'No ticket was found or you have cancaled before'
         });
       });
       hidetext();
